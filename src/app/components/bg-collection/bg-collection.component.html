@@ -1,3 +1,11 @@
-<p>
-  bg-collection works!
-</p>
+<div>
+  <h3>Import collection</h3>
+  <label for="dashboard-user-id-input">User id :</label> <input id="dashboard-user-id-input" (keyup.enter)="fetchCollection();" [(ngModel)]="colId" />
+  <button (click)="fetchCollection();" [disabled]="!colId">
+    Fetch
+  </button>
+  <hr>
+  <div *ngIf="colId">
+    collection comes here !
+  </div>
+</div>

@@ -1,3 +1,11 @@
-<p>
-  bg-tree works!
-</p>
+<div>
+  <h3>Import full BG tree</h3>
+  <label for="dashboard-bg-id-input">BG id :</label> <input id="dashboard-bg-id-input" (keyup.enter)="fetchFullTree();" [(ngModel)]="bgId" />
+  <button (click)="fetchFullTree();" [disabled]="!bgId">
+    Fetch
+  </button>
+  <hr>
+  <div *ngIf="bgId">
+    tree comes here !
+  </div>
+</div>

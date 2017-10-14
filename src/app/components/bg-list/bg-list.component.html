@@ -1,3 +1,11 @@
-<p>
-  bg-list works!
-</p>
+<div>
+  <h3>Import list</h3>
+  <label  for="dashboard-bg-id-list-input">BG id list :</label> <input id="dashboard-bg-id-list-input" (keyup.enter)="fetchList();" [(ngModel)]="listBgId" />
+  <button (click)="fetchList();" [disabled]="!listBgId">
+    Fetch
+  </button>
+  <hr>
+  <div *ngIf="listBgId">
+    list comes here !
+  </div>
+</div>
