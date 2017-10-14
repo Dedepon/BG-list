@@ -1,3 +1,19 @@
-<p>
-  bg-dashboard works!
-</p>
+<div>
+  <h3>Import collection</h3>
+  <label for="dashboard-user-id-input">User id :</label> <input id="dashboard-user-id-input" (keyup.enter)="fetchCollection();" [(ngModel)]="colId" />
+  <button (click)="fetchCollection();" [disabled]="!colId">
+    Fetch
+  </button>
+  <hr>
+  <h3>Import full BG tree</h3>
+  <label for="dashboard-bg-id-input">BG id :</label> <input id="dashboard-bg-id-input" (keyup.enter)="fetchFullTree();" [(ngModel)]="bgId" />
+  <button (click)="fetchFullTree();" [disabled]="!bgId">
+    Fetch
+  </button>
+  <hr>
+  <h3>Import list</h3>
+  <label  for="dashboard-bg-id-list-input">BG id list :</label> <input id="dashboard-bg-id-list-input" (keyup.enter)="fetchList();" [(ngModel)]="listBgId" />
+  <button (click)="fetchList();" [disabled]="!listBgId">
+    Fetch
+  </button>
+</div>
