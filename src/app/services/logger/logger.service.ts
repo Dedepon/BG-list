@@ -5,15 +5,15 @@ export class LoggerService {
 
   constructor() { }
 
-  static error(e: String): void {
+  static error(e: string): void {
     console.error(e);
   }
 
-  static log(l: String): void {
+  static log(l: string): void {
     console.log(l);
   }
 
-  static warn(w: String): void {
+  static warn(w: string): void {
     console.warn(w);
   }
 }

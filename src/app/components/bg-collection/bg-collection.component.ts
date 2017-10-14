@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./bg-collection.component.css']
 })
 export class BgCollectionComponent implements OnInit, OnDestroy {
-  colId: String;
+  colId: string;
   private sub: Subscription;
   constructor(private route: ActivatedRoute) { }
 

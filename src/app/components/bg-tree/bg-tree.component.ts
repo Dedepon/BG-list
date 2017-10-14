@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./bg-tree.component.css']
 })
 export class BgTreeComponent implements OnInit, OnDestroy {
-  bgId: String;
+  bgId: string;
   private sub: Subscription;
   constructor(private route: ActivatedRoute) { }
 

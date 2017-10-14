@@ -9,9 +9,9 @@ import { LoggerService } from '../../services/logger/logger.service';
   styleUrls: ['./bg-dashboard.component.css']
 })
 export class BgDashboardComponent implements OnInit {
-  colId: String;
-  bgId: String;
-  listBgId: String;
+  colId: string;
+  bgId: string;
+  listBgId: string;
 
   constructor(private router: Router) { }
 
