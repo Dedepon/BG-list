@@ -13,8 +13,7 @@ const url = 'https://www.boardgamegeek.com/xmlapi2/thing/?id=';
 @Injectable()
 export class BgService {
   private bgList: Map<string, Bg> = new Map();
-  constructor(private http: Http,
-              private bgParser: BgParserService) { }
+  constructor(private http: Http) { }
 
   getBgInfos(id: string): Promise<Bg> {
     if (this.bgList[id]) { return new Promise<Bg> (resolve => resolve(this.bgList[id])); }
@@ -22,7 +21,7 @@ export class BgService {
     return this.http.get(url + id)
       .toPromise()
       .then(response => {
-        this.bgList[id] = this.bgParser.parseBgData(response.text())[0];
+        this.bgList[id] = BgParserService.parseBgData(response.text())[0];
         return this.bgList[id];
       })
       .catch(val => {
@@ -51,7 +50,7 @@ export class BgService {
     return this.http.get(url + id)
       .toPromise()
       .then(response => {
-        const expList: Bg[] = this.bgParser.parseBgData(response.text());
+        const expList: Bg[] = BgParserService.parseBgData(response.text());
         for (let j = 0; j < expList.length; j++) {
           this.bgList[expList[j].id] = expList[j];
         }

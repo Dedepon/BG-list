@@ -7,6 +7,18 @@ export class BgParserService {
 
   constructor() { }
 
+  static parseBgData(data: string): Bg[] {
+    const parsedData: Document = BgParserService.parseXML(data);
+    const itemList: any = parsedData.getElementsByTagName('item');
+    const bgList: Bg[] = [];
+
+    for (let i = 0; i < itemList.length; i++) {
+      bgList.push(BgParserService.createBg(itemList[i]));
+    }
+
+    return bgList;
+  }
+
   private static parseXML(data: string): Document {
     return new DOMParser().parseFromString(data, 'text/xml');
   }
@@ -51,17 +63,5 @@ export class BgParserService {
       expansionsIDs: expansions,
       expansionOfId: ''
     };
-  }
-
-  parseBgData(data: string): Bg[] {
-    const parsedData: Document = this.parseXML(data);
-    const itemList: any = parsedData.getElementsByTagName('item');
-    const bgList: Bg[] = [];
-
-    for (let i = 0; i < itemList.length; i++) {
-      bgList.push(this.createBg(itemList[i]));
-    }
-
-    return bgList;
   }
 }
