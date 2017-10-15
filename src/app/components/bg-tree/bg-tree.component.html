@@ -5,7 +5,9 @@
     Fetch
   </button>
   <hr>
-  <div *ngIf="bgId">
-    tree comes here !
+  <div>
+    <span *ngFor="let bgitem of bg">
+      {{bgitem[0]}}:{{bgitem[1].name}}<br />
+    </span>
   </div>
 </div>
