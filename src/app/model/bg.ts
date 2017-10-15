@@ -1,5 +1,5 @@
 export class Bg {
-  id: number;
+  id: string;
   name: string;
   url: string;
 
@@ -13,7 +13,7 @@ export class Bg {
   minAge: number;
 
   category: string[];
-  machanic: string[];
+  mechanic: string[];
   family: string[];
 
   rating: number;
@@ -23,5 +23,6 @@ export class Bg {
   author: string[];
   artist: string[];
 
-  expansions: Bg[];
+  expansionsIDs: string[];
+  expansionOfId: string;
 }
