@@ -8,7 +8,7 @@ import { Bg } from '../../model/bg';
 import { LoggerService } from '../logger/logger.service';
 import { BgParserService } from '../bg-parser/bg-parser.service';
 
-const url = 'https://www.boardgamegeek.com/xmlapi2/thing/?id=';
+const url = 'https://www.boardgamegeek.com/xmlapi2/thing/?stats=1&id=';
 
 @Injectable()
 export class BgService {
