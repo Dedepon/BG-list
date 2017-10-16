@@ -17,12 +17,12 @@ export class Bg {
   family: string[];
 
   rating: number;
+  rank: number;
 
   publisher: string[];
   designer: string[];
-  author: string[];
   artist: string[];
 
   expansionsIDs: string[];
-  expansionOfId: string;
+  expansionOfId: string[];
 }
